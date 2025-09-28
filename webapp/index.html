@@ -3,38 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeoServer Hello World</title>
+    <title>Interactive Map of the Sahel Region</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.1.0/ol.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        #main {
+            display: flex;
+            flex: 1;
+        }
+        #sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        #map-container {
+            flex: 1;
+            position: relative;
+        }
         #map {
             width: 100%;
-            height: 400px;
+            height: 100%;
+        }
+        #popup {
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-symbol {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Hello from the Web App!</h1>
-    <div id="map"></div>
+    <div id="header">
+        <h1>Interactive Map of the Sahel Region</h1>
+    </div>
+    <div id="main">
+        <div id="sidebar">
+            <h2>Layers</h2>
+            <div>
+                <input type="checkbox" id="wells-checkbox" checked>
+                <label for="wells-checkbox">Wells</label>
+            </div>
+            <div>
+                <input type="checkbox" id="boreholes-checkbox" checked>
+                <label for="boreholes-checkbox">Boreholes</label>
+            </div>
+            <div>
+                <input type="checkbox" id="ponds-checkbox" checked>
+                <label for="ponds-checkbox">Ponds</label>
+            </div>
+            <div>
+                <input type="checkbox" id="admin-regions-checkbox" checked>
+                <label for="admin-regions-checkbox">Admin Regions</label>
+            </div>
+            <div>
+                <input type="checkbox" id="water-bodies-checkbox" checked>
+                <label for="water-bodies-checkbox">Water Bodies</label>
+            </div>
+            <div>
+                <input type="checkbox" id="land-cover-checkbox" checked>
+                <label for="land-cover-checkbox">Land Cover</label>
+            </div>
+            <div>
+                <input type="checkbox" id="climate-zones-checkbox" checked>
+                <label for="climate-zones-checkbox">Climate Zones</label>
+            </div>
+            <hr>
+            <h2>Legend</h2>
+            <div class="legend-item">
+                <div class="legend-symbol" style="background-color: blue;"></div>
+                <span>Well</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol" style="background-color: green;"></div>
+                <span>Borehole</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol" style="background-color: red;"></div>
+                <span>Pond</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol" style="border: 1px solid #000; background-color: rgba(0, 0, 0, 0.1);"></div>
+                <span>Admin Regions</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol" style="background-color: #0000FF;"></div>
+                <span>Water Bodies</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol" style="background-color: #8B4513;"></div>
+                <span>Land Cover</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-symbol" style="background-color: #FFD700;"></div>
+                <span>Climate Zones</span>
+            </div>
+        </div>
+        <div id="map-container">
+            <div id="map"></div>
+            <div id="popup"></div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/ol@v9.1.0/dist/ol.js"></script>
     <script>
-        var map = new ol.Map({
+        const sahelCenter = ol.proj.fromLonLat([15, 15]);
+
+        const wellsLayer = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+                url: 'http://localhost:8080/geoserver/wms',
+                params: {'LAYERS': 'sahel:wells'},
+                serverType: 'geoserver'
+            }),
+            visible: true
+        });
+
+        const boreholesLayer = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+                url: 'http://localhost:8080/geoserver/wms',
+                params: {'LAYERS': 'sahel:boreholes'},
+                serverType: 'geoserver'
+            }),
+            visible: true
+        });
+
+        const pondsLayer = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+                url: 'http://localhost:8080/geoserver/wms',
+                params: {'LAYERS': 'sahel:ponds'},
+                serverType: 'geoserver'
+            }),
+            visible: true
+        });
+
+        const adminRegionsLayer = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+                url: 'http://localhost:8080/geoserver/wms',
+                params: {'LAYERS': 'chad:gadm41_TCD_3'},
+                serverType: 'geoserver'
+            }),
+            visible: true
+        });
+
+        const waterBodiesLayer = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+                url: 'http://localhost:8080/geoserver/wms',
+                params: {'LAYERS': 'chad:tcd_wats_water_bodies_sd_wfp'},
+                serverType: 'geoserver'
+            }),
+            visible: true
+        });
+
+        const landCoverLayer = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+                url: 'http://localhost:8080/geoserver/wms',
+                params: {'LAYERS': 'chad:tcd_cv_land-cover_esa'},
+                serverType: 'geoserver'
+            }),
+            visible: true
+        });
+
+        const climateZonesLayer = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+                url: 'http://localhost:8080/geoserver/wms',
+                params: {'LAYERS': 'chad:tcd_clm_climate-zones_fao'},
+                serverType: 'geoserver'
+            }),
+            visible: true
+        });
+
+        const map = new ol.Map({
             target: 'map',
             layers: [
                 new ol.layer.Tile({
                     source: new ol.source.OSM()
                 }),
-                new ol.layer.Image({
-                    source: new ol.source.ImageWMS({
-                        url: 'http://localhost:8080/geoserver/wms',
-                        params: {'LAYERS': 'topp:states'},
-                        serverType: 'geoserver'
-                    })
-                })
+                wellsLayer,
+                boreholesLayer,
+                pondsLayer,
+                adminRegionsLayer,
+                waterBodiesLayer,
+                landCoverLayer,
+                climateZonesLayer
             ],
             view: new ol.View({
-                center: ol.proj.fromLonLat([-98.5795, 39.8283]),
-                zoom: 4
+                center: sahelCenter,
+                zoom: 5
             })
+        });
+
+        const popupElement = document.getElementById('popup');
+        const popup = new ol.Overlay({
+            element: popupElement,
+            positioning: 'bottom-center',
+            stopEvent: false,
+            offset: [0, -10]
+        });
+        map.addOverlay(popup);
+
+        document.getElementById('wells-checkbox').addEventListener('change', (event) => {
+            wellsLayer.setVisible(event.target.checked);
+        });
+
+        document.getElementById('boreholes-checkbox').addEventListener('change', (event) => {
+            boreholesLayer.setVisible(event.target.checked);
+        });
+
+        document.getElementById('ponds-checkbox').addEventListener('change', (event) => {
+            pondsLayer.setVisible(event.target.checked);
+        });
+
+        document.getElementById('admin-regions-checkbox').addEventListener('change', (event) => {
+            adminRegionsLayer.setVisible(event.target.checked);
+        });
+
+        document.getElementById('water-bodies-checkbox').addEventListener('change', (event) => {
+            waterBodiesLayer.setVisible(event.target.checked);
+        });
+
+        document.getElementById('land-cover-checkbox').addEventListener('change', (event) => {
+            landCoverLayer.setVisible(event.target.checked);
+        });
+
+        document.getElementById('climate-zones-checkbox').addEventListener('change', (event) => {
+            climateZonesLayer.setVisible(event.target.checked);
+        });
+
+        map.on('singleclick', (evt) => {
+            popupElement.style.display = 'none';
+            const viewResolution = map.getView().getResolution();
+            const layers = [wellsLayer, boreholesLayer, pondsLayer, adminRegionsLayer, waterBodiesLayer, landCoverLayer, climateZonesLayer];
+            layers.forEach(layer => {
+                if (layer.getVisible()) {
+                    const url = layer.getSource().getFeatureInfoUrl(
+                        evt.coordinate,
+                        viewResolution,
+                        'EPSG:3857',
+                        {'INFO_FORMAT': 'application/json'}
+                    );
+                    if (url) {
+                        fetch(url)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.features.length > 0) {
+                                    const feature = data.features[0];
+                                    const properties = feature.properties;
+                                    const content = `<h3>${properties.name}</h3><p>${properties.description}</p>`;
+                                    popup.setPosition(evt.coordinate);
+                                    popupElement.innerHTML = content;
+                                    popupElement.style.display = 'block';
+                                }
+                            });
+                    }
+                }
+            });
         });
     </script>
 </body>

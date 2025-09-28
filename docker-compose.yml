@@ -29,6 +29,7 @@ services:
       - "8080:8080"
     volumes:
       - geoserver_data:/opt/geoserver_data
+      - ./shapefiles:/opt/geoserver_data/data/shapefiles
     depends_on:
       - postgres
     networks:
