@@ -55,7 +55,7 @@ PostgreSQL: Connect via psql -h localhost -U geouser -d geodb.
 
 GeoServer: Access http://localhost:8080/geoserver.
 
-Web App: Access http://localhost:8081 to test PrimeFaces/OpenLayers integration.
+Web App: Access http://localhost:8080 to test PrimeFaces/OpenLayers integration.
 
 This setup ensures all components are linked, with GeoServer serving spatial data from PostGIS and the web app consuming it via OpenLayers. Adjust versions/ports as needed.
 

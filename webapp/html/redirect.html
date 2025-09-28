@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GeoServer Redirect Handler</title>
+    <script>
+        // Get the redirect URL from the query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirect');
+        
+        if (redirectUrl) {
+            // Parse the redirect URL
+            const url = new URL(redirectUrl);
+            
+            // Ensure it maintains the same protocol as the current page
+            url.protocol = window.location.protocol;
+            
+            // Ensure it uses the same host as the current page
+            url.host = window.location.host;
+            
+            // If the URL is for GeoServer, ensure it uses the /geoserver path
+            if (!url.pathname.startsWith('/geoserver')) {
+                url.pathname = '/geoserver' + url.pathname;
+            }
+            
+            // Redirect to the fixed URL
+            window.location.href = url.toString();
+        } else {
+            // If no redirect URL, go to GeoServer home
+            window.location.href = '/geoserver/web/';
+        }
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <p>Please wait while you are redirected to GeoServer.</p>
+</body>
+</html>

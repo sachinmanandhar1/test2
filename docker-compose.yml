@@ -25,14 +25,25 @@ services:
       GEOSERVER_DATA_DIR: /opt/geoserver_data
       GEOSERVER_ADMIN_USER: admin
       GEOSERVER_ADMIN_PASSWORD: geoserver
-      GEOSERVER_OPTS: "-Dgeoserver.proxy.base.url=http://localhost:8080/geoserver"
+      GEOWEBCACHE_CACHE_DIR: /opt/geoserver_data/gwc
+      GEOSERVER_CSRF_DISABLED: "true"
+      CATALINA_OPTS: "-server -Xms1024m -Xmx2048m"
+      PROXY_BASE_URL: "http://localhost:8080/geoserver"
+      GEOSERVER_OPTS: "-Dgeoserver.baseUrl=http://localhost:8080/geoserver"
+      EXTRA_JAVA_OPTS: "-Djava.awt.headless=true -DGEOSERVER_BASE_URL=http://localhost:8080/geoserver"
     volumes:
+      - ./geoserver/global.xml:/opt/geoserver_data/global.xml
       - geoserver_data:/opt/geoserver_data
       - ./shapefiles:/opt/geoserver_data/data/shapefiles
     depends_on:
       - postgres
     networks:
       - geo-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/geoserver/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   # Web Application (Nginx)
   webapp:
@@ -49,6 +60,11 @@ services:
 volumes:
   postgres_data:
   geoserver_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/geoserver_data
 
 networks:
   geo-network:

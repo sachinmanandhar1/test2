@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<global>
+  <settings>
+    <id>SettingsInfoImpl-68f6c1c5:154ca420c47:-8000</id>
+    <contact>
+      <addressCity>Alexandria</addressCity>
+      <addressCountry>Egypt</addressCountry>
+      <addressType>Work</addressType>
+      <contactEmail>claudius.ptolomaeus@gmail.com</contactEmail>
+      <contactOrganization>The Ancient Geographers</contactOrganization>
+      <contactPerson>Claudius Ptolemaeus</contactPerson>
+      <contactPosition>Chief Geographer</contactPosition>
+    </contact>
+    <charset>UTF-8</charset>
+    <numDecimals>8</numDecimals>
+    <onlineResource>http://localhost:8080/geoserver</onlineResource>
+    <verbose>false</verbose>
+    <verboseExceptions>false</verboseExceptions>
+    <localWorkspaceIncludesPrefix>false</localWorkspaceIncludesPrefix>
+    <showCreatedTimeColumnsInAdminList>false</showCreatedTimeColumnsInAdminList>
+    <showModifiedTimeColumnsInAdminList>false</showModifiedTimeColumnsInAdminList>
+    <proxyBaseUrl>http://localhost:8080/geoserver</proxyBaseUrl>
+    <rootUrlInHeader>true</rootUrlInHeader>
+  </settings>
+  <jai>
+    <allowInterpolation>true</allowInterpolation>
+    <recycling>true</recycling>
+    <tilePriority>5</tilePriority>
+    <tileThreads>7</tileThreads>
+    <memoryCapacity>0.5</memoryCapacity>
+    <memoryThreshold>0.75</memoryThreshold>
+    <imageIOCache>true</imageIOCache>
+    <pngAcceleration>true</pngAcceleration>
+    <jpegAcceleration>true</jpegAcceleration>
+    <allowNativeMosaic>false</allowNativeMosaic>
+  </jai>
+  <coverageAccess>
+    <maxPoolSize>10</maxPoolSize>
+    <corePoolSize>5</corePoolSize>
+    <keepAliveTime>30000</keepAliveTime>
+    <queueType>UNBOUNDED</queueType>
+    <imageIOCacheThreshold>10240</imageIOCacheThreshold>
+  </coverageAccess>
+  <updateSequence>0</updateSequence>
+  <featureTypeCacheSize>0</featureTypeCacheSize>
+  <globalServices>true</globalServices>
+  <xmlPostRequestLogBufferSize>1024</xmlPostRequestLogBufferSize>
+  <xmlExternalEntitiesEnabled>false</xmlExternalEntitiesEnabled>
+  <webUIMode>DEFAULT</webUIMode>
+  <lockProviderName>h2</lockProviderName>
+</global>

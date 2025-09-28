@@ -1,0 +1,1176 @@
+28 Sep 21:23:49 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+28 Sep 21:23:52 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+28 Sep 21:23:53 CONFIG [geoserver.config] - Loading catalog /opt/geoserver_data
+28 Sep 21:23:53 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:23:53 INFO   [geoserver.config] - Read Catalog in 200.9 ms: workspaces: 0, namespaces: 0, styles: 5, stores: 0, resources: 0, layers: 0, layer groups: 0.
+28 Sep 21:23:54 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:23:54 CONFIG [gwc.config] - Create configuration file '/opt/geoserver_data/gwc/geowebcache.xml' from template jar:file:/usr/local/tomcat/webapps/geoserver/WEB-INF/lib/gwc-core-1.27.2.jar!/geowebcache_empty.xml
+28 Sep 21:23:54 WARN   [config.XMLConfiguration] - GWC configuration validation error: cvc-elt.1.a: Cannot find the declaration of element 'gwcConfiguration'.
+28 Sep 21:23:54 WARN   [config.XMLConfiguration] - Will try to use configuration anyway. Please check the order of declared elements against the schema.
+28 Sep 21:23:54 CONFIG [config.XMLConfiguration] - Initializing GridSets from /opt/geoserver_data/gwc
+28 Sep 21:23:54 CONFIG [config.XMLConfiguration] - Initializing layers from /opt/geoserver_data/gwc
+28 Sep 21:23:54 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+28 Sep 21:23:54 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:23:54 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:23:54 CONFIG [gwc.layer] - Loaded 0 tile layers in 1.363 ms
+28 Sep 21:23:54 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration /opt/geoserver_data/gwc contained no blob store infos.
+28 Sep 21:23:54 CONFIG [storage.DefaultStorageFinder] - Found system environment variableGEOWEBCACHE_CACHE_DIR set to /opt/geoserver_data/gwc, using it as the default prefix.
+28 Sep 21:23:54 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:23:54 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:23:54 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:23:55 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:23:55 CONFIG [config.datadir] - Loading GeoServer config...
+28 Sep 21:23:55 CONFIG [config.datadir] - Loaded service 'WCSInfoImpl-2bfb7be2:1999235f5b9:-7ffb', enabled
+28 Sep 21:23:55 CONFIG [config.datadir] - Loaded service 'WFSInfoImpl-2bfb7be2:1999235f5b9:-7ffa', enabled
+28 Sep 21:23:55 CONFIG [config.datadir] - Loaded service 'WMSInfoImpl-2bfb7be2:1999235f5b9:-7ff9', enabled
+28 Sep 21:23:55 CONFIG [config.datadir] - Loaded service 'WMTSInfoImpl-2bfb7be2:1999235f5b9:-7ff8', enabled
+28 Sep 21:23:55 CONFIG [config.datadir] - Loaded service 'csw', enabled
+28 Sep 21:23:55 CONFIG [config.datadir] - Loaded service 'WPSInfoImpl-2bfb7be2:1999235f5b9:-7ff7', enabled
+28 Sep 21:23:55 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:23:55 CONFIG [config.datadir] - Loading workspace services and settings...
+28 Sep 21:23:56 CONFIG [config.datadir] - GeoServer config (settings and services) loaded in 243.9 ms
+28 Sep 21:23:56 ERROR  [geoserver.config] - Failed to run initializer org.geoserver.config.LockProviderInitializer@3242577b
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'h2' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:874)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1359)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1171)
+	at org.geoserver.platform.GeoServerExtensions.getBean(GeoServerExtensions.java:249)
+	at org.geoserver.platform.GeoServerExtensions.bean(GeoServerExtensions.java:293)
+	at org.geoserver.config.LockProviderInitializer.setLockProvider(LockProviderInitializer.java:58)
+	at org.geoserver.config.LockProviderInitializer.initialize(LockProviderInitializer.java:47)
+	at org.geoserver.config.GeoServerLoader.loadInitializers(GeoServerLoader.java:342)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitializationGeoServer(GeoServerLoader.java:302)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitialization(GeoServerLoader.java:276)
+	at org.geoserver.config.GeoServerLoaderProxy.postProcessBeforeInitialization(GeoServerLoaderProxy.java:63)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:220)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:399)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:278)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.geoserver.platform.GeoServerContextLoaderListener.contextInitialized(GeoServerContextLoaderListener.java:22)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4059)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4501)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:604)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1174)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1883)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1085)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:470)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1579)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:312)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:722)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+28 Sep 21:23:56 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+28 Sep 21:23:56 INFO   [flow.config] - Loaded control-flow rule: ows.global=100
+28 Sep 21:23:56 INFO   [flow.config] - Loaded control-flow rule: ows.wms.getmap=10
+28 Sep 21:23:56 INFO   [flow.config] - Loaded control-flow rule: ows.wfs.getfeature.application/msexcel=4
+28 Sep 21:23:56 INFO   [flow.config] - Loaded control-flow rule: user=6
+28 Sep 21:23:56 INFO   [flow.config] - Loaded control-flow rule: ows.gwc=16
+28 Sep 21:23:56 INFO   [flow.config] - Loaded control-flow rule: user.ows.wps.execute=1000/d;30s
+28 Sep 21:23:56 INFO   [flow.config] - Loaded control-flow rule: user.ows.wms.getmap=30/s
+28 Sep 21:23:56 INFO   [flow.config] - Loaded control-flow rule: ip=10
+28 Sep 21:23:56 CONFIG [geoserver.flow] - Control-flow active with 8 flow controllers
+28 Sep 21:23:56 INFO   [security.csp] - Creating csp.xml with the default configuration
+28 Sep 21:23:56 INFO   [security.csp] - Creating csp_default.xml with the default configuration
+28 Sep 21:23:58 WARN   [turbojpeg.TurboJPEGMapResponse] - The turbo jpeg encoder is available for usage
+28 Sep 21:23:58 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+28 Sep 21:23:58 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+28 Sep 21:23:59 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+28 Sep 21:23:59 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+28 Sep 21:23:59 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Found 7 bindable processes in GeoServer specific processes
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Found 89 bindable processes in Deprecated processes
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Blacklisting process vec:GroupCandidateSelection as the input groupingAttributes of type class java.lang.Object cannot be handled
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Found 31 bindable processes in Vector processes
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Blacklisting process ras:ConvolveCoverage as the input kernel of type class javax.media.jai.KernelJAI cannot be handled
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input zones of type class java.lang.Object cannot be handled
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input nodata of type class it.geosolutions.jaiext.range.Range cannot be handled
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input rangeData of type class java.lang.Object cannot be handled
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the output zonal statistics of type interface java.util.List cannot be handled
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Found 18 bindable processes in Raster processes
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Found 48 bindable processes in Geometry processes
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Found 1 bindable processes in PolygonLabelProcess
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:24:03 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:24:03 INFO   [geoserver.monitor] - Monitor extension enabled
+28 Sep 21:24:04 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:24:04 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+28 Sep 21:24:04 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+28 Sep 21:24:04 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers attached to global quota 20.0 GB
+28 Sep 21:24:04 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 5 SECONDS
+28 Sep 21:24:04 INFO   [geoserver.security] - Strong cryptography is available
+28 Sep 21:24:05 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+28 Sep 21:24:05 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+28 Sep 21:24:05 INFO   [geoserver.security] - Start encrypting configuration passwords using strongPbePasswordEncoder
+28 Sep 21:24:05 INFO   [geoserver.security] - End encrypting configuration passwords
+28 Sep 21:24:05 INFO   [config.XMLConfiguration] - Wrote configuration to /opt/geoserver_data/gwc
+28 Sep 21:25:53 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:25:53 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:25:53 CONFIG [gwc.layer] - Loaded 0 tile layers in 1.122 ms
+28 Sep 21:25:54 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:25:54 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:25:54 CONFIG [gwc.layer] - Loaded 0 tile layers in 1.640 ms
+28 Sep 21:25:54 INFO   [jdbc.JDBCQuotaStore] - Closing up the JDBC quota store 
+28 Sep 21:25:54 WARN   [support.DisposableBeanAdapter] - Custom destroy method 'destroy' on bean with name 'gwcMemoryBlobStore' threw an exception: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@22f2c904[Not completed, task = org.geowebcache.storage.blobstore.memory.MemoryBlobStore$BlobStoreTask@76188ffc] rejected from java.util.concurrent.ThreadPoolExecutor@2c8d9957[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]
+28 Sep 21:25:54 INFO   [geoserver.logging] - Beginning GeoServer cleanup sequence
+28 Sep 21:26:24 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+28 Sep 21:26:27 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+28 Sep 21:26:29 CONFIG [geoserver.config] - Loading catalog /opt/geoserver_data
+28 Sep 21:26:29 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:26:29 CONFIG [config.datadir] - Loaded style point
+28 Sep 21:26:29 CONFIG [config.datadir] - Loaded style raster
+28 Sep 21:26:29 CONFIG [config.datadir] - Loaded style polygon
+28 Sep 21:26:29 CONFIG [config.datadir] - Loaded style generic
+28 Sep 21:26:29 CONFIG [config.datadir] - Loaded style line
+28 Sep 21:26:29 INFO   [geoserver.config] - Read Catalog in 160.5 ms: workspaces: 0, namespaces: 0, styles: 5, stores: 0, resources: 0, layers: 0, layer groups: 0.
+28 Sep 21:26:29 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:26:29 CONFIG [config.XMLConfiguration] - TileLayerConfiguration file validated fine.
+28 Sep 21:26:30 CONFIG [config.XMLConfiguration] - Initializing GridSets from /opt/geoserver_data/gwc
+28 Sep 21:26:30 INFO   [config.XMLConfiguration] - Read GridSet InspireCRS84Quad
+28 Sep 21:26:30 CONFIG [config.XMLConfiguration] - Initializing layers from /opt/geoserver_data/gwc
+28 Sep 21:26:30 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+28 Sep 21:26:30 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:26:30 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:26:30 CONFIG [gwc.layer] - Loaded 0 tile layers in 5.293 ms
+28 Sep 21:26:30 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration /opt/geoserver_data/gwc contained no blob store infos.
+28 Sep 21:26:30 CONFIG [storage.DefaultStorageFinder] - Found system environment variableGEOWEBCACHE_CACHE_DIR set to /opt/geoserver_data/gwc, using it as the default prefix.
+28 Sep 21:26:30 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:26:30 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:26:30 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:26:30 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:26:30 CONFIG [config.datadir] - Loading GeoServer config...
+28 Sep 21:26:30 CONFIG [config.datadir] - Loaded service 'WCSInfoImpl-2bfb7be2:1999235f5b9:-7ffb', enabled
+28 Sep 21:26:30 CONFIG [config.datadir] - Loaded service 'WFSInfoImpl-2bfb7be2:1999235f5b9:-7ffa', enabled
+28 Sep 21:26:30 CONFIG [config.datadir] - Loaded service 'WMSInfoImpl-2bfb7be2:1999235f5b9:-7ff9', enabled
+28 Sep 21:26:30 CONFIG [config.datadir] - Loaded service 'WMTSInfoImpl-2bfb7be2:1999235f5b9:-7ff8', enabled
+28 Sep 21:26:30 CONFIG [config.datadir] - Loaded service 'csw', enabled
+28 Sep 21:26:30 CONFIG [config.datadir] - Loaded service 'WPSInfoImpl-2bfb7be2:1999235f5b9:-7ff7', enabled
+28 Sep 21:26:30 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:26:30 CONFIG [config.datadir] - Loading workspace services and settings...
+28 Sep 21:26:31 CONFIG [config.datadir] - GeoServer config (settings and services) loaded in 165.4 ms
+28 Sep 21:26:31 ERROR  [geoserver.config] - Failed to run initializer org.geoserver.config.LockProviderInitializer@732cc5ea
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'h2' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:874)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1359)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1171)
+	at org.geoserver.platform.GeoServerExtensions.getBean(GeoServerExtensions.java:249)
+	at org.geoserver.platform.GeoServerExtensions.bean(GeoServerExtensions.java:293)
+	at org.geoserver.config.LockProviderInitializer.setLockProvider(LockProviderInitializer.java:58)
+	at org.geoserver.config.LockProviderInitializer.initialize(LockProviderInitializer.java:47)
+	at org.geoserver.config.GeoServerLoader.loadInitializers(GeoServerLoader.java:342)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitializationGeoServer(GeoServerLoader.java:302)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitialization(GeoServerLoader.java:276)
+	at org.geoserver.config.GeoServerLoaderProxy.postProcessBeforeInitialization(GeoServerLoaderProxy.java:63)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:220)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:399)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:278)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.geoserver.platform.GeoServerContextLoaderListener.contextInitialized(GeoServerContextLoaderListener.java:22)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4059)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4501)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:604)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1174)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1883)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1085)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:470)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1579)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:312)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:722)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+28 Sep 21:26:31 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+28 Sep 21:26:31 INFO   [flow.config] - Loaded control-flow rule: ows.global=100
+28 Sep 21:26:31 INFO   [flow.config] - Loaded control-flow rule: ows.wms.getmap=10
+28 Sep 21:26:31 INFO   [flow.config] - Loaded control-flow rule: ows.wfs.getfeature.application/msexcel=4
+28 Sep 21:26:31 INFO   [flow.config] - Loaded control-flow rule: user=6
+28 Sep 21:26:31 INFO   [flow.config] - Loaded control-flow rule: ows.gwc=16
+28 Sep 21:26:31 INFO   [flow.config] - Loaded control-flow rule: user.ows.wps.execute=1000/d;30s
+28 Sep 21:26:31 INFO   [flow.config] - Loaded control-flow rule: user.ows.wms.getmap=30/s
+28 Sep 21:26:31 INFO   [flow.config] - Loaded control-flow rule: ip=10
+28 Sep 21:26:31 CONFIG [geoserver.flow] - Control-flow active with 8 flow controllers
+28 Sep 21:26:32 WARN   [turbojpeg.TurboJPEGMapResponse] - The turbo jpeg encoder is available for usage
+28 Sep 21:26:33 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+28 Sep 21:26:33 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+28 Sep 21:26:33 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+28 Sep 21:26:33 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+28 Sep 21:26:33 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Found 7 bindable processes in GeoServer specific processes
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Found 89 bindable processes in Deprecated processes
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Blacklisting process vec:GroupCandidateSelection as the input groupingAttributes of type class java.lang.Object cannot be handled
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Found 31 bindable processes in Vector processes
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Blacklisting process ras:ConvolveCoverage as the input kernel of type class javax.media.jai.KernelJAI cannot be handled
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input zones of type class java.lang.Object cannot be handled
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input nodata of type class it.geosolutions.jaiext.range.Range cannot be handled
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input rangeData of type class java.lang.Object cannot be handled
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the output zonal statistics of type interface java.util.List cannot be handled
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Found 18 bindable processes in Raster processes
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Found 48 bindable processes in Geometry processes
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Found 1 bindable processes in PolygonLabelProcess
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:26:37 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:26:37 INFO   [geoserver.monitor] - Monitor extension enabled
+28 Sep 21:26:38 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:26:38 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+28 Sep 21:26:38 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+28 Sep 21:26:38 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers attached to global quota 20.0 GB
+28 Sep 21:26:38 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 5 SECONDS
+28 Sep 21:26:38 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+28 Sep 21:26:38 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+28 Sep 21:28:07 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:28:07 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:28:07 CONFIG [gwc.layer] - Loaded 0 tile layers in 477.6 μs
+28 Sep 21:28:07 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:28:07 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:28:07 CONFIG [gwc.layer] - Loaded 0 tile layers in 438.4 μs
+28 Sep 21:28:07 INFO   [jdbc.JDBCQuotaStore] - Closing up the JDBC quota store 
+28 Sep 21:28:07 WARN   [support.DisposableBeanAdapter] - Custom destroy method 'destroy' on bean with name 'gwcMemoryBlobStore' threw an exception: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@6e3de7b9[Not completed, task = org.geowebcache.storage.blobstore.memory.MemoryBlobStore$BlobStoreTask@13005130] rejected from java.util.concurrent.ThreadPoolExecutor@7c20a865[Shutting down, pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1]
+28 Sep 21:28:07 INFO   [geoserver.logging] - Beginning GeoServer cleanup sequence
+28 Sep 21:28:44 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+28 Sep 21:28:47 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+28 Sep 21:28:48 CONFIG [geoserver.config] - Loading catalog /opt/geoserver_data
+28 Sep 21:28:48 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:28:48 CONFIG [config.datadir] - Loaded style point
+28 Sep 21:28:48 CONFIG [config.datadir] - Loaded style raster
+28 Sep 21:28:48 CONFIG [config.datadir] - Loaded style polygon
+28 Sep 21:28:48 CONFIG [config.datadir] - Loaded style generic
+28 Sep 21:28:48 CONFIG [config.datadir] - Loaded style line
+28 Sep 21:28:48 INFO   [geoserver.config] - Read Catalog in 222.2 ms: workspaces: 0, namespaces: 0, styles: 5, stores: 0, resources: 0, layers: 0, layer groups: 0.
+28 Sep 21:28:49 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:28:49 CONFIG [config.XMLConfiguration] - TileLayerConfiguration file validated fine.
+28 Sep 21:28:49 CONFIG [config.XMLConfiguration] - Initializing GridSets from /opt/geoserver_data/gwc
+28 Sep 21:28:49 INFO   [config.XMLConfiguration] - Read GridSet InspireCRS84Quad
+28 Sep 21:28:49 CONFIG [config.XMLConfiguration] - Initializing layers from /opt/geoserver_data/gwc
+28 Sep 21:28:49 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+28 Sep 21:28:49 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:28:49 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:28:49 CONFIG [gwc.layer] - Loaded 0 tile layers in 1.504 ms
+28 Sep 21:28:49 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration /opt/geoserver_data/gwc contained no blob store infos.
+28 Sep 21:28:49 CONFIG [storage.DefaultStorageFinder] - Found system environment variableGEOWEBCACHE_CACHE_DIR set to /opt/geoserver_data/gwc, using it as the default prefix.
+28 Sep 21:28:49 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:28:49 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:28:49 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:28:49 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:28:50 CONFIG [config.datadir] - Loading GeoServer config...
+28 Sep 21:28:50 CONFIG [config.datadir] - Loaded service 'WCSInfoImpl-2bfb7be2:1999235f5b9:-7ffb', enabled
+28 Sep 21:28:50 CONFIG [config.datadir] - Loaded service 'WFSInfoImpl-2bfb7be2:1999235f5b9:-7ffa', enabled
+28 Sep 21:28:50 CONFIG [config.datadir] - Loaded service 'WMSInfoImpl-2bfb7be2:1999235f5b9:-7ff9', enabled
+28 Sep 21:28:50 CONFIG [config.datadir] - Loaded service 'WMTSInfoImpl-2bfb7be2:1999235f5b9:-7ff8', enabled
+28 Sep 21:28:50 CONFIG [config.datadir] - Loaded service 'csw', enabled
+28 Sep 21:28:50 CONFIG [config.datadir] - Loaded service 'WPSInfoImpl-2bfb7be2:1999235f5b9:-7ff7', enabled
+28 Sep 21:28:50 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:28:50 CONFIG [config.datadir] - Loading workspace services and settings...
+28 Sep 21:28:50 CONFIG [config.datadir] - GeoServer config (settings and services) loaded in 165.7 ms
+28 Sep 21:28:50 ERROR  [geoserver.config] - Failed to run initializer org.geoserver.config.LockProviderInitializer@7bcf3081
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'h2' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:874)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1359)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1171)
+	at org.geoserver.platform.GeoServerExtensions.getBean(GeoServerExtensions.java:249)
+	at org.geoserver.platform.GeoServerExtensions.bean(GeoServerExtensions.java:293)
+	at org.geoserver.config.LockProviderInitializer.setLockProvider(LockProviderInitializer.java:58)
+	at org.geoserver.config.LockProviderInitializer.initialize(LockProviderInitializer.java:47)
+	at org.geoserver.config.GeoServerLoader.loadInitializers(GeoServerLoader.java:342)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitializationGeoServer(GeoServerLoader.java:302)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitialization(GeoServerLoader.java:276)
+	at org.geoserver.config.GeoServerLoaderProxy.postProcessBeforeInitialization(GeoServerLoaderProxy.java:63)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:220)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:399)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:278)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.geoserver.platform.GeoServerContextLoaderListener.contextInitialized(GeoServerContextLoaderListener.java:22)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4059)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4501)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:604)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1174)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1883)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1085)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:470)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1579)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:312)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:722)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+28 Sep 21:28:50 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+28 Sep 21:28:51 INFO   [flow.config] - Loaded control-flow rule: ows.global=100
+28 Sep 21:28:51 INFO   [flow.config] - Loaded control-flow rule: ows.wms.getmap=10
+28 Sep 21:28:51 INFO   [flow.config] - Loaded control-flow rule: ows.wfs.getfeature.application/msexcel=4
+28 Sep 21:28:51 INFO   [flow.config] - Loaded control-flow rule: user=6
+28 Sep 21:28:51 INFO   [flow.config] - Loaded control-flow rule: ows.gwc=16
+28 Sep 21:28:51 INFO   [flow.config] - Loaded control-flow rule: user.ows.wps.execute=1000/d;30s
+28 Sep 21:28:51 INFO   [flow.config] - Loaded control-flow rule: user.ows.wms.getmap=30/s
+28 Sep 21:28:51 INFO   [flow.config] - Loaded control-flow rule: ip=10
+28 Sep 21:28:51 CONFIG [geoserver.flow] - Control-flow active with 8 flow controllers
+28 Sep 21:28:53 WARN   [turbojpeg.TurboJPEGMapResponse] - The turbo jpeg encoder is available for usage
+28 Sep 21:28:54 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+28 Sep 21:28:54 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+28 Sep 21:28:54 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+28 Sep 21:28:54 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+28 Sep 21:28:54 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Found 7 bindable processes in GeoServer specific processes
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Found 89 bindable processes in Deprecated processes
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Blacklisting process vec:GroupCandidateSelection as the input groupingAttributes of type class java.lang.Object cannot be handled
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Found 31 bindable processes in Vector processes
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Blacklisting process ras:ConvolveCoverage as the input kernel of type class javax.media.jai.KernelJAI cannot be handled
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input zones of type class java.lang.Object cannot be handled
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input nodata of type class it.geosolutions.jaiext.range.Range cannot be handled
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input rangeData of type class java.lang.Object cannot be handled
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the output zonal statistics of type interface java.util.List cannot be handled
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Found 18 bindable processes in Raster processes
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Found 48 bindable processes in Geometry processes
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Found 1 bindable processes in PolygonLabelProcess
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:28:58 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:28:58 INFO   [geoserver.monitor] - Monitor extension enabled
+28 Sep 21:28:59 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:28:59 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+28 Sep 21:28:59 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+28 Sep 21:28:59 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers attached to global quota 20.0 GB
+28 Sep 21:28:59 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 5 SECONDS
+28 Sep 21:28:59 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+28 Sep 21:28:59 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+28 Sep 21:29:43 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:29:43 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:29:43 CONFIG [gwc.layer] - Loaded 0 tile layers in 474.1 μs
+28 Sep 21:29:43 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:29:43 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:29:43 CONFIG [gwc.layer] - Loaded 0 tile layers in 432.0 μs
+28 Sep 21:29:44 INFO   [jdbc.JDBCQuotaStore] - Closing up the JDBC quota store 
+28 Sep 21:29:44 WARN   [support.DisposableBeanAdapter] - Custom destroy method 'destroy' on bean with name 'gwcMemoryBlobStore' threw an exception: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@791fe0d8[Not completed, task = org.geowebcache.storage.blobstore.memory.MemoryBlobStore$BlobStoreTask@12a3601e] rejected from java.util.concurrent.ThreadPoolExecutor@13472ce2[Shutting down, pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1]
+28 Sep 21:29:44 INFO   [geoserver.logging] - Beginning GeoServer cleanup sequence
+28 Sep 21:30:17 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+28 Sep 21:30:20 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+28 Sep 21:30:22 CONFIG [geoserver.config] - Loading catalog /opt/geoserver_data
+28 Sep 21:30:22 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:30:22 CONFIG [config.datadir] - Loaded style point
+28 Sep 21:30:22 CONFIG [config.datadir] - Loaded style raster
+28 Sep 21:30:22 CONFIG [config.datadir] - Loaded style polygon
+28 Sep 21:30:22 CONFIG [config.datadir] - Loaded style generic
+28 Sep 21:30:22 CONFIG [config.datadir] - Loaded style line
+28 Sep 21:30:22 INFO   [geoserver.config] - Read Catalog in 228.3 ms: workspaces: 0, namespaces: 0, styles: 5, stores: 0, resources: 0, layers: 0, layer groups: 0.
+28 Sep 21:30:23 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:30:23 CONFIG [config.XMLConfiguration] - TileLayerConfiguration file validated fine.
+28 Sep 21:30:23 CONFIG [config.XMLConfiguration] - Initializing GridSets from /opt/geoserver_data/gwc
+28 Sep 21:30:23 INFO   [config.XMLConfiguration] - Read GridSet InspireCRS84Quad
+28 Sep 21:30:23 CONFIG [config.XMLConfiguration] - Initializing layers from /opt/geoserver_data/gwc
+28 Sep 21:30:23 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+28 Sep 21:30:23 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:30:23 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:30:23 CONFIG [gwc.layer] - Loaded 0 tile layers in 2.153 ms
+28 Sep 21:30:23 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration /opt/geoserver_data/gwc contained no blob store infos.
+28 Sep 21:30:23 CONFIG [storage.DefaultStorageFinder] - Found system environment variableGEOWEBCACHE_CACHE_DIR set to /opt/geoserver_data/gwc, using it as the default prefix.
+28 Sep 21:30:23 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:30:23 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:30:23 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:30:23 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:30:24 CONFIG [config.datadir] - Loading GeoServer config...
+28 Sep 21:30:24 CONFIG [config.datadir] - Loaded service 'WCSInfoImpl-2bfb7be2:1999235f5b9:-7ffb', enabled
+28 Sep 21:30:24 CONFIG [config.datadir] - Loaded service 'WFSInfoImpl-2bfb7be2:1999235f5b9:-7ffa', enabled
+28 Sep 21:30:24 CONFIG [config.datadir] - Loaded service 'WMSInfoImpl-2bfb7be2:1999235f5b9:-7ff9', enabled
+28 Sep 21:30:24 CONFIG [config.datadir] - Loaded service 'WMTSInfoImpl-2bfb7be2:1999235f5b9:-7ff8', enabled
+28 Sep 21:30:24 CONFIG [config.datadir] - Loaded service 'csw', enabled
+28 Sep 21:30:24 CONFIG [config.datadir] - Loaded service 'WPSInfoImpl-2bfb7be2:1999235f5b9:-7ff7', enabled
+28 Sep 21:30:24 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:30:24 CONFIG [config.datadir] - Loading workspace services and settings...
+28 Sep 21:30:24 CONFIG [config.datadir] - GeoServer config (settings and services) loaded in 162.3 ms
+28 Sep 21:30:24 ERROR  [geoserver.config] - Failed to run initializer org.geoserver.config.LockProviderInitializer@7bcf3081
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'h2' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:874)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1359)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1171)
+	at org.geoserver.platform.GeoServerExtensions.getBean(GeoServerExtensions.java:249)
+	at org.geoserver.platform.GeoServerExtensions.bean(GeoServerExtensions.java:293)
+	at org.geoserver.config.LockProviderInitializer.setLockProvider(LockProviderInitializer.java:58)
+	at org.geoserver.config.LockProviderInitializer.initialize(LockProviderInitializer.java:47)
+	at org.geoserver.config.GeoServerLoader.loadInitializers(GeoServerLoader.java:342)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitializationGeoServer(GeoServerLoader.java:302)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitialization(GeoServerLoader.java:276)
+	at org.geoserver.config.GeoServerLoaderProxy.postProcessBeforeInitialization(GeoServerLoaderProxy.java:63)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:220)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:399)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:278)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.geoserver.platform.GeoServerContextLoaderListener.contextInitialized(GeoServerContextLoaderListener.java:22)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4059)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4501)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:604)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1174)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1883)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1085)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:470)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1579)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:312)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:722)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+28 Sep 21:30:24 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+28 Sep 21:30:25 INFO   [flow.config] - Loaded control-flow rule: ows.global=100
+28 Sep 21:30:25 INFO   [flow.config] - Loaded control-flow rule: ows.wms.getmap=10
+28 Sep 21:30:25 INFO   [flow.config] - Loaded control-flow rule: ows.wfs.getfeature.application/msexcel=4
+28 Sep 21:30:25 INFO   [flow.config] - Loaded control-flow rule: user=6
+28 Sep 21:30:25 INFO   [flow.config] - Loaded control-flow rule: ows.gwc=16
+28 Sep 21:30:25 INFO   [flow.config] - Loaded control-flow rule: user.ows.wps.execute=1000/d;30s
+28 Sep 21:30:25 INFO   [flow.config] - Loaded control-flow rule: user.ows.wms.getmap=30/s
+28 Sep 21:30:25 INFO   [flow.config] - Loaded control-flow rule: ip=10
+28 Sep 21:30:25 CONFIG [geoserver.flow] - Control-flow active with 8 flow controllers
+28 Sep 21:30:27 WARN   [turbojpeg.TurboJPEGMapResponse] - The turbo jpeg encoder is available for usage
+28 Sep 21:30:28 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+28 Sep 21:30:28 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+28 Sep 21:30:28 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+28 Sep 21:30:28 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+28 Sep 21:30:28 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+28 Sep 21:30:32 CONFIG [geoserver.wps] - Found 7 bindable processes in GeoServer specific processes
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Found 89 bindable processes in Deprecated processes
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Blacklisting process vec:GroupCandidateSelection as the input groupingAttributes of type class java.lang.Object cannot be handled
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Found 31 bindable processes in Vector processes
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Blacklisting process ras:ConvolveCoverage as the input kernel of type class javax.media.jai.KernelJAI cannot be handled
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input zones of type class java.lang.Object cannot be handled
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input nodata of type class it.geosolutions.jaiext.range.Range cannot be handled
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input rangeData of type class java.lang.Object cannot be handled
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the output zonal statistics of type interface java.util.List cannot be handled
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Found 18 bindable processes in Raster processes
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Found 48 bindable processes in Geometry processes
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Found 1 bindable processes in PolygonLabelProcess
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:30:33 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:30:33 INFO   [geoserver.monitor] - Monitor extension enabled
+28 Sep 21:30:33 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:30:33 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+28 Sep 21:30:33 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+28 Sep 21:30:33 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers attached to global quota 20.0 GB
+28 Sep 21:30:33 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 5 SECONDS
+28 Sep 21:30:34 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+28 Sep 21:30:34 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+28 Sep 21:31:15 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:31:15 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:31:15 CONFIG [gwc.layer] - Loaded 0 tile layers in 592.5 μs
+28 Sep 21:31:15 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:31:15 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:31:15 CONFIG [gwc.layer] - Loaded 0 tile layers in 2.295 ms
+28 Sep 21:31:15 INFO   [jdbc.JDBCQuotaStore] - Closing up the JDBC quota store 
+28 Sep 21:31:15 WARN   [support.DisposableBeanAdapter] - Custom destroy method 'destroy' on bean with name 'gwcMemoryBlobStore' threw an exception: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@791fe0d8[Not completed, task = org.geowebcache.storage.blobstore.memory.MemoryBlobStore$BlobStoreTask@12a3601e] rejected from java.util.concurrent.ThreadPoolExecutor@13472ce2[Shutting down, pool size = 1, active threads = 0, queued tasks = 0, completed tasks = 1]
+28 Sep 21:31:15 INFO   [geoserver.logging] - Beginning GeoServer cleanup sequence
+28 Sep 21:31:46 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+28 Sep 21:31:49 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+28 Sep 21:31:50 CONFIG [geoserver.config] - Loading catalog /opt/geoserver_data
+28 Sep 21:31:50 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:31:50 CONFIG [config.datadir] - Loaded style point
+28 Sep 21:31:50 CONFIG [config.datadir] - Loaded style raster
+28 Sep 21:31:50 CONFIG [config.datadir] - Loaded style polygon
+28 Sep 21:31:50 CONFIG [config.datadir] - Loaded style generic
+28 Sep 21:31:50 CONFIG [config.datadir] - Loaded style line
+28 Sep 21:31:50 INFO   [geoserver.config] - Read Catalog in 186.6 ms: workspaces: 0, namespaces: 0, styles: 5, stores: 0, resources: 0, layers: 0, layer groups: 0.
+28 Sep 21:31:51 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:31:51 CONFIG [config.XMLConfiguration] - TileLayerConfiguration file validated fine.
+28 Sep 21:31:51 CONFIG [config.XMLConfiguration] - Initializing GridSets from /opt/geoserver_data/gwc
+28 Sep 21:31:51 INFO   [config.XMLConfiguration] - Read GridSet InspireCRS84Quad
+28 Sep 21:31:51 CONFIG [config.XMLConfiguration] - Initializing layers from /opt/geoserver_data/gwc
+28 Sep 21:31:51 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+28 Sep 21:31:51 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:31:51 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:31:51 CONFIG [gwc.layer] - Loaded 0 tile layers in 1.376 ms
+28 Sep 21:31:51 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration /opt/geoserver_data/gwc contained no blob store infos.
+28 Sep 21:31:51 CONFIG [storage.DefaultStorageFinder] - Found system environment variableGEOWEBCACHE_CACHE_DIR set to /opt/geoserver_data/gwc, using it as the default prefix.
+28 Sep 21:31:51 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:31:51 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:31:51 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:31:51 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:31:52 CONFIG [config.datadir] - Loading GeoServer config...
+28 Sep 21:31:52 CONFIG [config.datadir] - Loaded service 'WCSInfoImpl-2bfb7be2:1999235f5b9:-7ffb', enabled
+28 Sep 21:31:52 CONFIG [config.datadir] - Loaded service 'WFSInfoImpl-2bfb7be2:1999235f5b9:-7ffa', enabled
+28 Sep 21:31:52 CONFIG [config.datadir] - Loaded service 'WMSInfoImpl-2bfb7be2:1999235f5b9:-7ff9', enabled
+28 Sep 21:31:52 CONFIG [config.datadir] - Loaded service 'WMTSInfoImpl-2bfb7be2:1999235f5b9:-7ff8', enabled
+28 Sep 21:31:52 CONFIG [config.datadir] - Loaded service 'csw', enabled
+28 Sep 21:31:52 CONFIG [config.datadir] - Loaded service 'WPSInfoImpl-2bfb7be2:1999235f5b9:-7ff7', enabled
+28 Sep 21:31:52 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:31:52 CONFIG [config.datadir] - Loading workspace services and settings...
+28 Sep 21:31:52 CONFIG [config.datadir] - GeoServer config (settings and services) loaded in 159.6 ms
+28 Sep 21:31:52 ERROR  [geoserver.config] - Failed to run initializer org.geoserver.config.LockProviderInitializer@7bcf3081
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'h2' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:874)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1359)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1171)
+	at org.geoserver.platform.GeoServerExtensions.getBean(GeoServerExtensions.java:249)
+	at org.geoserver.platform.GeoServerExtensions.bean(GeoServerExtensions.java:293)
+	at org.geoserver.config.LockProviderInitializer.setLockProvider(LockProviderInitializer.java:58)
+	at org.geoserver.config.LockProviderInitializer.initialize(LockProviderInitializer.java:47)
+	at org.geoserver.config.GeoServerLoader.loadInitializers(GeoServerLoader.java:342)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitializationGeoServer(GeoServerLoader.java:302)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitialization(GeoServerLoader.java:276)
+	at org.geoserver.config.GeoServerLoaderProxy.postProcessBeforeInitialization(GeoServerLoaderProxy.java:63)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:220)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:399)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:278)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.geoserver.platform.GeoServerContextLoaderListener.contextInitialized(GeoServerContextLoaderListener.java:22)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4059)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4501)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:604)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1174)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1883)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1085)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:470)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1579)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:312)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:722)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+28 Sep 21:31:52 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+28 Sep 21:31:53 INFO   [flow.config] - Loaded control-flow rule: ows.global=100
+28 Sep 21:31:53 INFO   [flow.config] - Loaded control-flow rule: ows.wms.getmap=10
+28 Sep 21:31:53 INFO   [flow.config] - Loaded control-flow rule: ows.wfs.getfeature.application/msexcel=4
+28 Sep 21:31:53 INFO   [flow.config] - Loaded control-flow rule: user=6
+28 Sep 21:31:53 INFO   [flow.config] - Loaded control-flow rule: ows.gwc=16
+28 Sep 21:31:53 INFO   [flow.config] - Loaded control-flow rule: user.ows.wps.execute=1000/d;30s
+28 Sep 21:31:53 INFO   [flow.config] - Loaded control-flow rule: user.ows.wms.getmap=30/s
+28 Sep 21:31:53 INFO   [flow.config] - Loaded control-flow rule: ip=10
+28 Sep 21:31:53 CONFIG [geoserver.flow] - Control-flow active with 8 flow controllers
+28 Sep 21:31:54 WARN   [turbojpeg.TurboJPEGMapResponse] - The turbo jpeg encoder is available for usage
+28 Sep 21:31:55 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+28 Sep 21:31:55 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+28 Sep 21:31:55 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+28 Sep 21:31:55 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+28 Sep 21:31:55 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Found 7 bindable processes in GeoServer specific processes
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Found 89 bindable processes in Deprecated processes
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Blacklisting process vec:GroupCandidateSelection as the input groupingAttributes of type class java.lang.Object cannot be handled
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Found 31 bindable processes in Vector processes
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Blacklisting process ras:ConvolveCoverage as the input kernel of type class javax.media.jai.KernelJAI cannot be handled
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input zones of type class java.lang.Object cannot be handled
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input nodata of type class it.geosolutions.jaiext.range.Range cannot be handled
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input rangeData of type class java.lang.Object cannot be handled
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the output zonal statistics of type interface java.util.List cannot be handled
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Found 18 bindable processes in Raster processes
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Found 48 bindable processes in Geometry processes
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Found 1 bindable processes in PolygonLabelProcess
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:31:59 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:31:59 INFO   [geoserver.monitor] - Monitor extension enabled
+28 Sep 21:32:00 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:32:00 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+28 Sep 21:32:00 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+28 Sep 21:32:00 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers attached to global quota 20.0 GB
+28 Sep 21:32:00 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 5 SECONDS
+28 Sep 21:32:00 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+28 Sep 21:32:00 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+28 Sep 21:33:55 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:33:55 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:33:55 CONFIG [gwc.layer] - Loaded 0 tile layers in 483.7 μs
+28 Sep 21:33:55 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:33:55 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:33:55 CONFIG [gwc.layer] - Loaded 0 tile layers in 375.2 μs
+28 Sep 21:33:55 INFO   [jdbc.JDBCQuotaStore] - Closing up the JDBC quota store 
+28 Sep 21:33:55 WARN   [support.DisposableBeanAdapter] - Custom destroy method 'destroy' on bean with name 'gwcMemoryBlobStore' threw an exception: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@60d74a25[Not completed, task = org.geowebcache.storage.blobstore.memory.MemoryBlobStore$BlobStoreTask@1adad432] rejected from java.util.concurrent.ThreadPoolExecutor@2bccc4a3[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]
+28 Sep 21:33:55 INFO   [geoserver.logging] - Beginning GeoServer cleanup sequence
+28 Sep 21:34:28 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+28 Sep 21:34:31 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+28 Sep 21:34:32 CONFIG [geoserver.config] - Loading catalog /opt/geoserver_data
+28 Sep 21:34:33 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:34:33 CONFIG [config.datadir] - Loaded style point
+28 Sep 21:34:33 CONFIG [config.datadir] - Loaded style raster
+28 Sep 21:34:33 CONFIG [config.datadir] - Loaded style polygon
+28 Sep 21:34:33 CONFIG [config.datadir] - Loaded style generic
+28 Sep 21:34:33 CONFIG [config.datadir] - Loaded style line
+28 Sep 21:34:33 INFO   [geoserver.config] - Read Catalog in 245.9 ms: workspaces: 0, namespaces: 0, styles: 5, stores: 0, resources: 0, layers: 0, layer groups: 0.
+28 Sep 21:34:33 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:34:33 CONFIG [config.XMLConfiguration] - TileLayerConfiguration file validated fine.
+28 Sep 21:34:34 CONFIG [config.XMLConfiguration] - Initializing GridSets from /opt/geoserver_data/gwc
+28 Sep 21:34:34 INFO   [config.XMLConfiguration] - Read GridSet InspireCRS84Quad
+28 Sep 21:34:34 CONFIG [config.XMLConfiguration] - Initializing layers from /opt/geoserver_data/gwc
+28 Sep 21:34:34 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+28 Sep 21:34:34 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:34:34 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:34:34 CONFIG [gwc.layer] - Loaded 0 tile layers in 2.128 ms
+28 Sep 21:34:34 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration /opt/geoserver_data/gwc contained no blob store infos.
+28 Sep 21:34:34 CONFIG [storage.DefaultStorageFinder] - Found system environment variableGEOWEBCACHE_CACHE_DIR set to /opt/geoserver_data/gwc, using it as the default prefix.
+28 Sep 21:34:34 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:34:34 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:34:34 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:34:34 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:34:35 CONFIG [config.datadir] - Loading GeoServer config...
+28 Sep 21:34:35 CONFIG [config.datadir] - Loaded service 'WCSInfoImpl-2bfb7be2:1999235f5b9:-7ffb', enabled
+28 Sep 21:34:35 CONFIG [config.datadir] - Loaded service 'WFSInfoImpl-2bfb7be2:1999235f5b9:-7ffa', enabled
+28 Sep 21:34:35 CONFIG [config.datadir] - Loaded service 'WMSInfoImpl-2bfb7be2:1999235f5b9:-7ff9', enabled
+28 Sep 21:34:35 CONFIG [config.datadir] - Loaded service 'WMTSInfoImpl-2bfb7be2:1999235f5b9:-7ff8', enabled
+28 Sep 21:34:35 CONFIG [config.datadir] - Loaded service 'csw', enabled
+28 Sep 21:34:35 CONFIG [config.datadir] - Loaded service 'WPSInfoImpl-2bfb7be2:1999235f5b9:-7ff7', enabled
+28 Sep 21:34:35 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:34:35 CONFIG [config.datadir] - Loading workspace services and settings...
+28 Sep 21:34:35 CONFIG [config.datadir] - GeoServer config (settings and services) loaded in 139.8 ms
+28 Sep 21:34:35 ERROR  [geoserver.config] - Failed to run initializer org.geoserver.config.LockProviderInitializer@7bcf3081
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'h2' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:874)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1359)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1171)
+	at org.geoserver.platform.GeoServerExtensions.getBean(GeoServerExtensions.java:249)
+	at org.geoserver.platform.GeoServerExtensions.bean(GeoServerExtensions.java:293)
+	at org.geoserver.config.LockProviderInitializer.setLockProvider(LockProviderInitializer.java:58)
+	at org.geoserver.config.LockProviderInitializer.initialize(LockProviderInitializer.java:47)
+	at org.geoserver.config.GeoServerLoader.loadInitializers(GeoServerLoader.java:342)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitializationGeoServer(GeoServerLoader.java:302)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitialization(GeoServerLoader.java:276)
+	at org.geoserver.config.GeoServerLoaderProxy.postProcessBeforeInitialization(GeoServerLoaderProxy.java:63)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:220)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:399)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:278)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.geoserver.platform.GeoServerContextLoaderListener.contextInitialized(GeoServerContextLoaderListener.java:22)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4059)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4501)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:604)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1174)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1883)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1085)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:470)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1579)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:312)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:722)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+28 Sep 21:34:35 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+28 Sep 21:34:35 INFO   [flow.config] - Loaded control-flow rule: ows.global=100
+28 Sep 21:34:35 INFO   [flow.config] - Loaded control-flow rule: ows.wms.getmap=10
+28 Sep 21:34:35 INFO   [flow.config] - Loaded control-flow rule: ows.wfs.getfeature.application/msexcel=4
+28 Sep 21:34:35 INFO   [flow.config] - Loaded control-flow rule: user=6
+28 Sep 21:34:35 INFO   [flow.config] - Loaded control-flow rule: ows.gwc=16
+28 Sep 21:34:35 INFO   [flow.config] - Loaded control-flow rule: user.ows.wps.execute=1000/d;30s
+28 Sep 21:34:35 INFO   [flow.config] - Loaded control-flow rule: user.ows.wms.getmap=30/s
+28 Sep 21:34:35 INFO   [flow.config] - Loaded control-flow rule: ip=10
+28 Sep 21:34:35 CONFIG [geoserver.flow] - Control-flow active with 8 flow controllers
+28 Sep 21:34:37 WARN   [turbojpeg.TurboJPEGMapResponse] - The turbo jpeg encoder is available for usage
+28 Sep 21:34:37 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+28 Sep 21:34:37 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+28 Sep 21:34:38 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+28 Sep 21:34:38 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+28 Sep 21:34:38 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Found 7 bindable processes in GeoServer specific processes
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Found 89 bindable processes in Deprecated processes
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Blacklisting process vec:GroupCandidateSelection as the input groupingAttributes of type class java.lang.Object cannot be handled
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Found 31 bindable processes in Vector processes
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Blacklisting process ras:ConvolveCoverage as the input kernel of type class javax.media.jai.KernelJAI cannot be handled
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input zones of type class java.lang.Object cannot be handled
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input nodata of type class it.geosolutions.jaiext.range.Range cannot be handled
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input rangeData of type class java.lang.Object cannot be handled
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the output zonal statistics of type interface java.util.List cannot be handled
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Found 18 bindable processes in Raster processes
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Found 48 bindable processes in Geometry processes
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Found 1 bindable processes in PolygonLabelProcess
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:34:42 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:34:42 INFO   [geoserver.monitor] - Monitor extension enabled
+28 Sep 21:34:42 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:34:42 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+28 Sep 21:34:42 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+28 Sep 21:34:42 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers attached to global quota 20.0 GB
+28 Sep 21:34:42 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 5 SECONDS
+28 Sep 21:34:43 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+28 Sep 21:34:43 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+28 Sep 21:34:52 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:34:52 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:34:52 CONFIG [gwc.layer] - Loaded 0 tile layers in 508.9 μs
+28 Sep 21:34:52 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:34:52 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:34:52 CONFIG [gwc.layer] - Loaded 0 tile layers in 547.0 μs
+28 Sep 21:34:52 INFO   [jdbc.JDBCQuotaStore] - Closing up the JDBC quota store 
+28 Sep 21:34:52 WARN   [support.DisposableBeanAdapter] - Custom destroy method 'destroy' on bean with name 'gwcMemoryBlobStore' threw an exception: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.FutureTask@699c2090[Not completed, task = org.geowebcache.storage.blobstore.memory.MemoryBlobStore$BlobStoreTask@17fe9655] rejected from java.util.concurrent.ThreadPoolExecutor@6a180fb9[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1]
+28 Sep 21:34:52 INFO   [geoserver.logging] - Beginning GeoServer cleanup sequence
+28 Sep 21:35:30 CONFIG [geoserver.logging] - Log4j 2 configuration set to DEFAULT_LOGGING.xml
+28 Sep 21:35:32 CONFIG [org.geoserver] - GeoServer configuration lock is enabled
+28 Sep 21:35:34 CONFIG [geoserver.config] - Loading catalog /opt/geoserver_data
+28 Sep 21:35:34 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:35:34 CONFIG [config.datadir] - Loaded style point
+28 Sep 21:35:34 CONFIG [config.datadir] - Loaded style raster
+28 Sep 21:35:34 CONFIG [config.datadir] - Loaded style polygon
+28 Sep 21:35:34 CONFIG [config.datadir] - Loaded style generic
+28 Sep 21:35:34 CONFIG [config.datadir] - Loaded style line
+28 Sep 21:35:34 INFO   [geoserver.config] - Read Catalog in 225.2 ms: workspaces: 0, namespaces: 0, styles: 5, stores: 0, resources: 0, layers: 0, layer groups: 0.
+28 Sep 21:35:35 CONFIG [gwc.config] - Will look for 'geowebcache.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:35:35 CONFIG [config.XMLConfiguration] - TileLayerConfiguration file validated fine.
+28 Sep 21:35:35 CONFIG [config.XMLConfiguration] - Initializing GridSets from /opt/geoserver_data/gwc
+28 Sep 21:35:35 INFO   [config.XMLConfiguration] - Read GridSet InspireCRS84Quad
+28 Sep 21:35:35 CONFIG [config.XMLConfiguration] - Initializing layers from /opt/geoserver_data/gwc
+28 Sep 21:35:35 CONFIG [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+28 Sep 21:35:35 CONFIG [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+28 Sep 21:35:35 CONFIG [gwc.layer] - Loading tile layers from gwc-layers
+28 Sep 21:35:35 CONFIG [gwc.layer] - Loaded 0 tile layers in 5.242 ms
+28 Sep 21:35:35 CONFIG [storage.BlobStoreAggregator] - BlobStoreConfiguration /opt/geoserver_data/gwc contained no blob store infos.
+28 Sep 21:35:35 CONFIG [storage.DefaultStorageFinder] - Found system environment variableGEOWEBCACHE_CACHE_DIR set to /opt/geoserver_data/gwc, using it as the default prefix.
+28 Sep 21:35:35 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:35:35 CONFIG [gwc.config] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/opt/geoserver_data/gwc'.
+28 Sep 21:35:35 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:35:35 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:35:36 CONFIG [config.datadir] - Loading GeoServer config...
+28 Sep 21:35:36 CONFIG [config.datadir] - Loaded service 'WCSInfoImpl-2bfb7be2:1999235f5b9:-7ffb', enabled
+28 Sep 21:35:36 CONFIG [config.datadir] - Loaded service 'WFSInfoImpl-2bfb7be2:1999235f5b9:-7ffa', enabled
+28 Sep 21:35:36 CONFIG [config.datadir] - Loaded service 'WMSInfoImpl-2bfb7be2:1999235f5b9:-7ff9', enabled
+28 Sep 21:35:36 CONFIG [config.datadir] - Loaded service 'WMTSInfoImpl-2bfb7be2:1999235f5b9:-7ff8', enabled
+28 Sep 21:35:36 CONFIG [config.datadir] - Loaded service 'csw', enabled
+28 Sep 21:35:36 CONFIG [config.datadir] - Loaded service 'WPSInfoImpl-2bfb7be2:1999235f5b9:-7ff7', enabled
+28 Sep 21:35:36 CONFIG [config.datadir] - Catalog and configuration loader uses 2 threads out of 2 available cores.
+28 Sep 21:35:36 CONFIG [config.datadir] - Loading workspace services and settings...
+28 Sep 21:35:36 CONFIG [config.datadir] - GeoServer config (settings and services) loaded in 205.6 ms
+28 Sep 21:35:36 ERROR  [geoserver.config] - Failed to run initializer org.geoserver.config.LockProviderInitializer@7bcf3081
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'h2' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:874)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1359)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1171)
+	at org.geoserver.platform.GeoServerExtensions.getBean(GeoServerExtensions.java:249)
+	at org.geoserver.platform.GeoServerExtensions.bean(GeoServerExtensions.java:293)
+	at org.geoserver.config.LockProviderInitializer.setLockProvider(LockProviderInitializer.java:58)
+	at org.geoserver.config.LockProviderInitializer.initialize(LockProviderInitializer.java:47)
+	at org.geoserver.config.GeoServerLoader.loadInitializers(GeoServerLoader.java:342)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitializationGeoServer(GeoServerLoader.java:302)
+	at org.geoserver.config.GeoServerLoader.postProcessBeforeInitialization(GeoServerLoader.java:276)
+	at org.geoserver.config.GeoServerLoaderProxy.postProcessBeforeInitialization(GeoServerLoaderProxy.java:63)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:781)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:220)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:209)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:399)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:278)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.geoserver.platform.GeoServerContextLoaderListener.contextInitialized(GeoServerContextLoaderListener.java:22)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4059)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4501)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:604)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1174)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1883)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+	at org.apache.catalina.startup.HostConfig.deployDirectories(HostConfig.java:1085)
+	at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:470)
+	at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1579)
+	at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:312)
+	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+	at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:389)
+	at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:336)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:776)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:722)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:82)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:211)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:412)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:874)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:739)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+28 Sep 21:35:36 CONFIG [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+28 Sep 21:35:37 INFO   [flow.config] - Loaded control-flow rule: ows.global=100
+28 Sep 21:35:37 INFO   [flow.config] - Loaded control-flow rule: ows.wms.getmap=10
+28 Sep 21:35:37 INFO   [flow.config] - Loaded control-flow rule: ows.wfs.getfeature.application/msexcel=4
+28 Sep 21:35:37 INFO   [flow.config] - Loaded control-flow rule: user=6
+28 Sep 21:35:37 INFO   [flow.config] - Loaded control-flow rule: ows.gwc=16
+28 Sep 21:35:37 INFO   [flow.config] - Loaded control-flow rule: user.ows.wps.execute=1000/d;30s
+28 Sep 21:35:37 INFO   [flow.config] - Loaded control-flow rule: user.ows.wms.getmap=30/s
+28 Sep 21:35:37 INFO   [flow.config] - Loaded control-flow rule: ip=10
+28 Sep 21:35:37 CONFIG [geoserver.flow] - Control-flow active with 8 flow controllers
+28 Sep 21:35:38 WARN   [turbojpeg.TurboJPEGMapResponse] - The turbo jpeg encoder is available for usage
+28 Sep 21:35:38 CONFIG [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+28 Sep 21:35:38 CONFIG [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+28 Sep 21:35:39 CONFIG [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+28 Sep 21:35:39 CONFIG [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+28 Sep 21:35:39 CONFIG [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Found 7 bindable processes in GeoServer specific processes
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Found 89 bindable processes in Deprecated processes
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Blacklisting process vec:GroupCandidateSelection as the input groupingAttributes of type class java.lang.Object cannot be handled
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Found 31 bindable processes in Vector processes
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Blacklisting process ras:ConvolveCoverage as the input kernel of type class javax.media.jai.KernelJAI cannot be handled
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input zones of type class java.lang.Object cannot be handled
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input nodata of type class it.geosolutions.jaiext.range.Range cannot be handled
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the input rangeData of type class java.lang.Object cannot be handled
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Blacklisting process ras:RasterZonalStatistics2 as the output zonal statistics of type interface java.util.List cannot be handled
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Found 18 bindable processes in Raster processes
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Found 48 bindable processes in Geometry processes
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Found 1 bindable processes in PolygonLabelProcess
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:35:44 CONFIG [geoserver.wps] - Found 1 bindable processes in geo
+28 Sep 21:35:44 INFO   [geoserver.monitor] - Monitor extension enabled
+28 Sep 21:35:44 CONFIG [diskquota.ConfigLoader] - Quota config is: /opt/geoserver_data/gwc/geowebcache-diskquota.xml
+28 Sep 21:35:44 CONFIG [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+28 Sep 21:35:44 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+28 Sep 21:35:44 CONFIG [diskquota.DiskQuotaMonitor] - 0 layers attached to global quota 20.0 GB
+28 Sep 21:35:44 CONFIG [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 5 SECONDS
+28 Sep 21:35:45 CONFIG [geoserver.security] - Start reloading user/groups for service named default
+28 Sep 21:35:45 CONFIG [geoserver.security] - Reloading user/groups successful for service named default
+28 Sep 21:36:28 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:28 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:28 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:28 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:28 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:28 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:28 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:30 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:30 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:30 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:30 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:30 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:30 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
+28 Sep 21:36:31 WARN   [servlet.PageNotFound] - No mapping for GET /geoserver/sahel/wms
