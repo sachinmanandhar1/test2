@@ -25,8 +25,7 @@ services:
       GEOSERVER_DATA_DIR: /opt/geoserver_data
       GEOSERVER_ADMIN_USER: admin
       GEOSERVER_ADMIN_PASSWORD: geoserver
-    ports:
-      - "8080:8080"
+      GEOSERVER_OPTS: "-Dgeoserver.proxy.base.url=http://localhost:8080/geoserver"
     volumes:
       - geoserver_data:/opt/geoserver_data
       - ./shapefiles:/opt/geoserver_data/data/shapefiles
@@ -35,12 +34,12 @@ services:
     networks:
       - geo-network
 
-  # Java EE Web Application (Jetty + PrimeFaces + OpenLayers)
+  # Web Application (Nginx)
   webapp:
     build: ./webapp
     container_name: webapp
     ports:
-      - "8081:80"
+      - "8080:80"
     depends_on:
       - postgres
       - geoserver

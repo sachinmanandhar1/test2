@@ -2,6 +2,11 @@ import requests
 import os
 import time
 
+# Give GeoServer time to start up
+print("Waiting for GeoServer to start...")
+time.sleep(30)
+print("Continuing with script.")
+
 # GeoServer connection details
 GEOSERVER_URL = "http://geoserver:8080/geoserver/rest"
 GEOSERVER_USER = "admin"
