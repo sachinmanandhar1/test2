@@ -98,6 +98,7 @@ def publish_layers():
             publish_data = f"<featureType><name>{layer_name}</name></featureType>"
             publish_headers = {"Content-type": "text/xml"}
             publish_response = requests.post(publish_url, auth=(GEOSERVER_USER, GEOSERVER_PASS), headers=publish_headers, data=publish_data)
+            
             if publish_response.status_code == 201:
                 print(f"Layer '{layer_name}' published successfully.")
             else:

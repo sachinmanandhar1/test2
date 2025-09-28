@@ -135,7 +135,7 @@
 
         const wellsLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
-                url: 'http://localhost:8080/geoserver/wms',
+                url: '/geoserver/wms',
                 params: {'LAYERS': 'sahel:wells'},
                 serverType: 'geoserver'
             }),
@@ -144,7 +144,7 @@
 
         const boreholesLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
-                url: 'http://localhost:8080/geoserver/wms',
+                url: '/geoserver/wms',
                 params: {'LAYERS': 'sahel:boreholes'},
                 serverType: 'geoserver'
             }),
@@ -153,7 +153,7 @@
 
         const pondsLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
-                url: 'http://localhost:8080/geoserver/wms',
+                url: '/geoserver/wms',
                 params: {'LAYERS': 'sahel:ponds'},
                 serverType: 'geoserver'
             }),
@@ -162,7 +162,7 @@
 
         const adminRegionsLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
-                url: 'http://localhost:8080/geoserver/wms',
+                url: '/geoserver/wms',
                 params: {'LAYERS': 'chad:gadm41_TCD_3'},
                 serverType: 'geoserver'
             }),
@@ -171,7 +171,7 @@
 
         const waterBodiesLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
-                url: 'http://localhost:8080/geoserver/wms',
+                url: '/geoserver/wms',
                 params: {'LAYERS': 'chad:tcd_wats_water_bodies_sd_wfp'},
                 serverType: 'geoserver'
             }),
@@ -180,7 +180,7 @@
 
         const landCoverLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
-                url: 'http://localhost:8080/geoserver/wms',
+                url: '/geoserver/wms',
                 params: {'LAYERS': 'chad:tcd_cv_land-cover_esa'},
                 serverType: 'geoserver'
             }),
@@ -189,7 +189,7 @@
 
         const climateZonesLayer = new ol.layer.Image({
             source: new ol.source.ImageWMS({
-                url: 'http://localhost:8080/geoserver/wms',
+                url: '/geoserver/wms',
                 params: {'LAYERS': 'chad:tcd_clm_climate-zones_fao'},
                 serverType: 'geoserver'
             }),
