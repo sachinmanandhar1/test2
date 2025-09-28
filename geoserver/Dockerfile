@@ -1,0 +1,1 @@
+FROM kartoza/geoserver:latest

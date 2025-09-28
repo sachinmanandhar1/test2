@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  # PostgreSQL with PostGIS
+  postgres:
+    image: postgis/postgis:15-3.3
+    container_name: postgres
+    environment:
+      POSTGRES_DB: geodb
+      POSTGRES_USER: geouser
+      POSTGRES_PASSWORD: geopass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - geo-network
+
+  # GeoServer with PostGIS support
+  geoserver:
+    build: ./geoserver
+    container_name: geoserver
+    environment:
+      GEOSERVER_DATA_DIR: /opt/geoserver_data
+      GEOSERVER_ADMIN_USER: admin
+      GEOSERVER_ADMIN_PASSWORD: geoserver
+    ports:
+      - "8080:8080"
+    volumes:
+      - geoserver_data:/opt/geoserver_data
+    depends_on:
+      - postgres
+    networks:
+      - geo-network
+
+  # Java EE Web Application (Jetty + PrimeFaces + OpenLayers)
+  webapp:
+    build: ./webapp
+    container_name: webapp
+    ports:
+      - "8081:80"
+    depends_on:
+      - postgres
+      - geoserver
+    networks:
+      - geo-network
+
+volumes:
+  postgres_data:
+  geoserver_data:
+
+networks:
+  geo-network:
+    driver: bridge
